@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="de" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Willkommen in Rinaboth</title>
+  </head>
+  <body>
+    <!-- 1. Header / Navigation -->
+    <header
+      class="sticky top-0 z-99 dark:bg-black/50 backdrop-blur-sm flex items-center justify-between"
+    >
+      <div
+        class="text-3xl container mx-auto flex flex-row items-center justify-between"
+      >
+        <div class="1fr">
+          <img
+            src="./assets/d20.ico"
+            alt="Ein Icon eines D20 Würfels"
+            class="hexagon h-12 w-12 md:h-16 md:w-16 shadow-md"
+          />
+        </div>
+        <div class="1fr text-xl md:text-4xl -mr-110 text-center">
+          <li class="list-none underline">
+            <a href="#home" rel="noopener noreferrer">Rinaboth</a>
+          </li>
+        </div>
+        <nav class="2fr list-none underline text-xl md:text-4xl">
+          <ul class="flex flex-col md:flex-row gap-8 text-right md:text-left">
+            <li><a href="#heroes" rel="noopener noreferrer">Helden</a></li>
+            <li><a href="#world" rel="noopener noreferrer">Die Welt</a></li>
+            <li>
+              <a href="#history" rel="noopener noreferrer">Die Geschichte</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- 1. Hero Section / Landing Page -->
+      <div
+        id="home"
+        class="hero min-h-screen"
+        style="
+          background-image: url(https://uploads.worldanvil.com/uploads/maps/477e2efb5b637af0420852cb3024adcf.jpeg);
+        "
+      >
+        <div class="hero-overlay"></div>
+        <div class="hero-content text-center">
+          <div class="max-w-xl">
+            <h1
+              class="mb-4 text-5xl text-center text-white text-shadow-black text-shadow-lg font-bold"
+            >
+              Das Versiegeln der Tore: <br />
+              Rinaboths letzte Hoffnung
+            </h1>
+            <p
+              class="mb-4 text-2xl text-center text-white text-shadow-black text-shadow-sm font-semibold tracking-wide"
+            >
+              In den Hallen von Draken sammeln wir unsere Kräfte. <br />
+              50 Klingen und drei Helden gegen die Flut der Flammensalamander.
+              <br />
+              Das Portal muss fallen, bevor Rinaboth zu Asche wird.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- 2. Section: Heroes -->
+      <section id="heroes" class="py-16 bg-base-200">
+        <div class="container mx-auto px-4 md:px-50">
+          <h2
+            class="text-4xl md:text-5xl font-bold text-center mb-6 text-secondary tracking-tighter"
+          >
+            Die Helden von Rinaboth
+          </h2>
+          <div class="divider w-55 mb-16 divider-primary mx-auto"></div>
+          <!--Card-->
+          <div class="w-full flex flex-col lg:flex-row gap-10">
+            <!--Avra-->
+            <div
+              class="gap-4 p-6 bg-base-100 rounded-3xl shadow-xl border border-primary/10"
+            >
+              <figure class="flex items-center justify-center">
+                <img
+                  src="https://www.dndbeyond.com/avatars/51787/344/1581111423-46519789.jpeg?width=150&height=150&fit=crop&quality=95&auto=webp"
+                  alt="Avra"
+                  class="rounded-xl h-40 w-40 md:h-52 md:w-52 shadow-md"
+                />
+              </figure>
+              <div class="text-center self-start">
+                <h3 class="text-3xl font-serif text-secondary mb-2">Avra</h3>
+                <p class="text-md opacity-80 leading-relaxed">
+                  Ich bin Avra, eine Hüterin des Dark Willow Woods und Bardin
+                  der schwebenden Pfade...
+                </p>
+              </div>
+
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.dndbeyond.com/characters/46519789"
+                  alt="Link zu dem Charakterbogen um mehr zu erfahren"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="btn btn-warning btn-block btn-sm"
+                >
+                  Erfahre mehr
+                </a>
+              </div>
+            </div>
+
+            <!--Lahar-->
+            <div
+              class="gap-4 p-6 bg-base-100 rounded-3xl shadow-xl border border-primary/10"
+            >
+              <figure class="flex items-center justify-center">
+                <img
+                  src="https://www.dndbeyond.com/avatars/21482/554/1581111423-59411193.jpeg?width=150&height=150&fit=crop&quality=95&auto=webp"
+                  alt="Lahar"
+                  class="rounded-xl object-cover h-40 w-40 md:h-52 md:w-52 shadow-md"
+                />
+              </figure>
+
+              <div class="text-center self-start">
+                <h3 class="text-3xl font-serif text-secondary mb-2">Lahar</h3>
+                <p class="text-md opacity-80 leading-relaxed">
+                  Ich bin Lahar, ein Dieb aus den Schatten der Stadt, der sich
+                  den flammenden Hügeln anschließt...
+                </p>
+              </div>
+
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.dndbeyond.com/characters/59411193/s5ESAj"
+                  alt="Link zu dem Charakterbogen von Lahar um mehr zu erfahren"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="btn btn-warning btn-block btn-sm"
+                >
+                  Erfahre mehr
+                </a>
+              </div>
+            </div>
+
+            <!--Acnologika-->
+            <div
+              class="gap-4 p-6 bg-base-100 rounded-3xl shadow-xl border border-primary/10"
+            >
+              <figure class="flex items-center justify-center">
+                <img
+                  src="https://www.dndbeyond.com/avatars/9221/748/637202353208535995.jpeg?width=150&height=150&fit=crop&quality=95&auto=webp"
+                  alt="Acnologika"
+                  class="rounded-xl object-cover h-40 w-40 md:h-52 md:w-52 shadow-md"
+                />
+              </figure>
+              <div class="text-center self-start">
+                <h3 class="text-3xl font-serif text-secondary mb-2">
+                  Acnologika
+                </h3>
+                <p class="text-md opacity-80 leading-relaxed">
+                  Ich bin Acnologika, ein Drachengeborener, der sich den Toren
+                  anschließt, um Rinaboth zu retten...
+                </p>
+              </div>
+
+              <div class="pt-4 mt-auto">
+                <a
+                  href="https://www.dndbeyond.com/characters/60583566/yJmuaL"
+                  alt="Link zu dem Charakterbogen um mehr zu erfahren"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  class="btn btn-warning btn-block btn-sm"
+                >
+                  Erfahre mehr
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="world" class="py-16">
+        <div class="container mx-auto px-4 md:px-10">
+          <h2
+            class="text-4xl md:text-5xl mt-2.5 font-bold text-center text-secondary tracking-tighter"
+          >
+            Die Welt von Rinaboth
+          </h2>
+          <div class="divider w-55 mb-16 divider-primary mx-auto"></div>
+          <figure class="flex items-center justify-center mb-10">
+            <img
+              src="https://www.worldanvil.com/uploads/images/94f53798c3ba30ab613eaf4e417e9adf.png"
+              alt="Eine Karte von Rinaboth"
+              class="rounded-3xl shadow-lg w-full md:w-3/4"
+            />
+          </figure>
+          <p class="text-lg text-center max-w-3xl mx-auto mb-20">
+            Einst war Rinaboth ein Reich der Harmonie, dessen Name die Einheit
+            von Mensch (Rina – Fluss) und Zwerg (Both – Stein) besiegelte. Doch
+            vor 250 Jahren versiegte die königliche Blutlinie in einer Tragödie,
+            die das Land in achtzig Jahre blutiger Erbfolgekriege stürzte. Die
+            Ära der Sieben Lords Seit 120 Jahren herrscht ein brüchiger Frieden.
+            Sieben Lords teilen das Land unter sich auf. Während an der
+            Oberfläche Turniere und "Gentleman-Duelle" das Volk unterhalten,
+            tobt im Schatten ein unerbittlicher Kampf um Steuern, Macht und
+            Territorium. Das Schicksal der einfachen Leute Für die Bewohner von
+            Rinaboth sind politische Wechsel Alltag geworden. Man wettet auf den
+            nächsten Lord, während man die Last der Steuern trägt. Doch nun
+            droht eine Gefahr, die kein politisches Ränkespiel lösen kann: Die
+            flammenden Hügel beben, und die "Flüsse aus Stein" fordern ihren
+            Tribut.
+          </p>
+          <div class="flex flex-col justify-content align-items">
+            <div class="text-center mb-3">
+              <h3
+                class="text-3xl text-center text-secondary font-semibold tracking-wide"
+              >
+                Die sieben Städte und deren Lords
+              </h3>
+              <div class="divider w-55 divider-primary mt-2 mx-auto"></div>
+            </div>
+            <ul class="list-none ml-20 pl-17 mb-10 text-lg">
+              <li>
+                <strong>West Farthing</strong> – Lord Earnest Hellingway – „Das
+                goldene Herz des Westmeeres“
+              </li>
+              <li>
+                <strong>King's Rest</strong> – Lord Henry Altsworth – „König
+                Heinrich“
+              </li>
+              <li><strong>Greenrun</strong> – Lord Tanner von Blackshire</li>
+              <li><strong>Highfield</strong> – Acnologika</li>
+              <li>
+                <strong>Southchapel</strong> – Erzbischof Seaward Goodwill
+              </li>
+              <li><strong>Flaming Hills</strong> – Lord Ghrakun Donnerspeer</li>
+              <li>
+                <strong>Letzte Bastion</strong> – Oberkommandantin Coldara
+                Bludmore
+              </li>
+            </ul>
+            <a
+              href="https://www.worldanvil.com/w/tiangra-voltikun/a/rinaboth-location"
+              alt="Link um mehr über Rinaboth zu erfahren"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="btn bg-amber-400 dark:btn-warning dark:text-amber-950 btn-soft btn-lg self-center"
+            >
+              Erfahre mehr
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="history" class="py-16 bg-base-200">
+        <div class="container mx-auto px-4 md:px-10">
+          <h2
+            class="text-4xl md:text-5xl mt-2.5 font-bold text-center text-secondary tracking-tighter"
+          >
+            Die Geschichte von Rinaboth
+          </h2>
+          <div class="divider w-55 mb-16 divider-primary mx-auto"></div>
+          <p class="text-lg text-center max-w-3xl mx-auto mb-20">
+            Vor 250 Jahren: Das Ende der königlichen Blutlinie – Ein tragischer
+            Unfall führt zum Tod des letzten Königs und seiner Erbin, was die
+            Dynastie auslöscht und das Land in Chaos stürzt. 250–170 Jahre
+            zuvor: Die Erbfolgekriege – Ohne legitimen Thronfolger kämpfen
+            rivalisierende Adelsfamilien um die Macht, was zu achtzig Jahren
+            blutiger Konflikte führt. 170–120 Jahre zuvor: Die Ära der Sieben
+            Lords – Sieben mächtige Lords teilen Rinaboth unter sich auf,
+            etablieren ein fragiles Gleichgewicht und führen das Land in eine
+            Zeit relativen Friedens. 120 Jahre zuvor: Aufstieg der
+            Flammensalamander – Die flammenden Hügel erwachen zum Leben, und die
+            "Flüsse aus Stein" beginnen, Opfer zu fordern, was die Bevölkerung
+            in Angst und Schrecken versetzt. Gegenwart: Das Versiegeln der Tore
+            – Drei Helden sammeln sich in den Hallen von Draken, um die Tore zu
+            den flammenden Hügeln zu versiegeln und Rinaboth vor der drohenden
+            Zerstörung zu retten.
+          </p>
+          <div class="flex flex-col justify-content align-items">
+            <div class="text-center mb-3">
+              <h3
+                class="text-3xl text-center text-secondary font-semibold tracking-wide"
+              >
+                Die wichtigsten Ereignisse in Rinaboths Geschichte
+              </h3>
+              <div class="divider w-55 divider-primary mt-2 mx-auto"></div>
+            </div>
+            <ul class="timeline timeline-vertical">
+              <li>
+                <div class="timeline-start timeline-box text-xl">
+                  Das Ende der königlichen Blutlinie
+                </div>
+                <div class="timeline-middle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="text-primary h-10 w-10"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <hr class="bg-primary" />
+              </li>
+              <li>
+                <hr class="bg-primary" />
+                <div class="timeline-middle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="text-primary h-10 w-10"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div class="timeline-end timeline-box text-xl">
+                  Kampf der rivalisierenden Königreiche
+                </div>
+                <hr class="bg-primary" />
+              </li>
+              <li>
+                <hr class="bg-primary" />
+                <div class="timeline-start timeline-box text-xl">
+                  Die Ära der sieben Lords
+                </div>
+                <div class="timeline-middle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="text-primary h-10 w-10"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <hr />
+              </li>
+              <li>
+                <hr />
+                <div class="timeline-middle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="h-10 w-10"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <div class="timeline-end timeline-box text-xl">
+                  Aufstieg der Flammensalamander
+                </div>
+                <hr />
+              </li>
+              <li>
+                <hr />
+                <div class="timeline-start timeline-box text-xl">
+                  Das Versiegeln des Portals
+                </div>
+                <div class="timeline-middle">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="h-10 w-10"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </li>
+            </ul>
+            <figure class="flex items-center justify-center mb-10">
+              <img
+                src="./assets/location.png"
+                alt="Eine Karte von dem Standort unserer Helden in Draken"
+                class="rounded-3xl shadow-lg w-full md:w-3/4"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container mx-auto px-4 py-8 text-center text-sm opacity-70">
+        &copy; SL Voltikun / Erstellt von Josephine Mundt
+      </div>
+    </footer>
+  </body>
+</html>
