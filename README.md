@@ -57,8 +57,8 @@ npm run dev
 
 ## Contributors
 
-Content concept (game master): SL Voltikun (via World Anvil)
+**Content concept (game master):** SL Voltikun (via World Anvil)
 
-Technical implementation and design: Josephine Mundt, supported by Ndimofor Aretas (DCI mentor) and Gemini
+**Technical implementation and design:** Josephine Mundt, supported by Ndimofor Aretas (DCI mentor) and Gemini
 
 ---
