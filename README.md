@@ -1,67 +1,64 @@
-![Ein Bild von der Startseite der Website](./assets/dashboard.webp)
+![An image of the website homepage](./assets/dashboard.webp)
 
-# 🛡️ Rinaboth – Das Versiegeln der Tore
+# Rinaboth - Sealing the Gates
 
-Dieses Dokument beschreibt das offizielle Web-Portal des Projekts "Rinaboth". Die Anwendung fungiert als zentrale Informationsarchitektur zur Darstellung der Protagonisten, der Historie sowie der Geografie einer fiktiven Welt.
+This document describes the official web portal of the "Rinaboth" project. The application serves as a central information architecture that presents the protagonists, history, and geography of a fictional world.
 
-## 🎯 Projektkontext und Zielsetzung
+## Project Context and Goals
 
-Das Projekt wurde im Rahmen einer Qualifizierungsmaßnahme zur Frontend-Webentwicklerin am Digital Career Institute (DCI) realisiert. Der entwicklungstechnische Fokus liegt auf der Implementierung responsiver Designkonzepte (Mobile-First-Ansatz) sowie der Einhaltung von Richtlinien zur digitalen Barrierefreiheit (Accessibility/A11y).
+The project was created as part of a frontend web development training program at the Digital Career Institute (DCI). The technical focus is on implementing responsive design concepts (mobile-first approach) and following digital accessibility guidelines (Accessibility/A11y).
 
-## ⚙️ Technische Spezifikationen und Merkmale
+## Technical Specifications and Features
 
-**Struktursprache:** Valides, semantisches HTML5 zur Gewährleistung einer maschinenlesbaren Dokumentenstruktur.
+**Markup language:** Valid, semantic HTML5 to ensure a machine-readable document structure.
 
-**Design & Layout:** Tailwind CSS (v4.x) und DaisyUI für die Umsetzung adaptiver, moderner Benutzeroberflächen.
+**Design and layout:** Tailwind CSS (v4.x) and DaisyUI for adaptive, modern user interfaces.
 
-**Barrierefreiheit (A11y):** Strategische Integration von aria-Attributen sowie touch-optimierte Interaktionsflächen für mobile Endgeräte.
+**Accessibility (A11y):** Strategic use of aria attributes and touch-optimized interaction areas for mobile devices.
 
-**Build-Management:** Vite als Build-Tool und lokaler Entwicklungsserver.
+**Build tooling:** Vite as build tool and local development server.
 
-**🚀 Zukünftige Entwicklungsphasen**
+## Future Development Phases
 
-Zur Transformation der statischen Informationsseite in eine interaktive Web-Applikation sind folgende funktionale Erweiterungen geplant:
+To transform the static information page into an interactive web application, the following functional enhancements are planned:
 
-[ ] **JavaScript-Integration:** Extraktion von Datenstrukturen in JSON-Formate zur dynamischen Inhaltsgenerierung (DRY-Prinzip).
+- [ ] **JavaScript integration:** Move data structures into JSON formats for dynamic content generation (DRY principle).
+- [ ] **Extended accessibility:** Implement visible focus indicators to ensure standards-compliant keyboard navigation.
+- [ ] **Interactivity:** Add filtering and sorting algorithms to manipulate content presentation.
+- [ ] **Contrast audit:** Review and optimize color contrast according to Web Content Accessibility Guidelines (WCAG).
 
-[ ] **Erweiterte Barrierefreiheit:** Implementierung visueller Fokus-Indikatoren zur Gewährleistung einer normgerechten Tastaturnavigation.
+## Installation Guide
 
-[ ] **Interaktivität:** Integration von Filter- und Sortieralgorithmen zur Manipulation der Inhaltsdarstellung.
+A working Node.js environment is required for local execution.
 
-[ ] **Kontrast-Audit:** Überprüfung und Optimierung der Farbkontraste in Übereinstimmung mit den Vorgaben der Web Content Accessibility Guidelines (WCAG).
+**1. Clone the repository**
 
-## 💻 Installationsanleitung
-
-Für die lokale Ausführung wird eine funktionale Node.js-Umgebung vorausgesetzt.
-
-**1. Repository klonen**
-
-```
-git clone [https://github.com/josephinemundt1297/d-and-d-project.git](https://github.com/josephinemundt1297/d-and-d-project.git)
+```bash
+git clone https://github.com/josephinemundt1297/d-and-d-project.git
 ```
 
-**2. In das Verzeichnis wechseln**
+**2. Change into the project directory**
 
-```
+```bash
 cd d-and-d-project
 ```
 
-**3. Abhängigkeiten installieren**
+**3. Install dependencies**
 
-```
+```bash
 npm install
 ```
 
-**4. Entwicklungsserver starten**
+**4. Start the development server**
 
-```
+```bash
 npm run dev
 ```
 
-**👥 Projektbeteiligte**
+## Contributors
 
-**Inhaltliche Konzeption (Spielleitung):** SL Voltikun (via World Anvil)
+Content concept (game master): SL Voltikun (via World Anvil)
 
-**Technische Umsetzung und Design:** Josephine Mundt, unterstützt durch Ndimofor Aretas (DCI Mentor) und Gemini
+Technical implementation and design: Josephine Mundt, supported by Ndimofor Aretas (DCI mentor) and Gemini
 
 ---
