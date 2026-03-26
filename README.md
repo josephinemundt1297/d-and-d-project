@@ -60,8 +60,8 @@ npm run dev
 
 **👥 Projektbeteiligte**
 
-Inhaltliche Konzeption (Spielleitung): SL Voltikun (via World Anvil)
+**Inhaltliche Konzeption (Spielleitung):** SL Voltikun (via World Anvil)
 
-Technische Umsetzung und Design: Josephine Mundt, unterstützt durch Ndimofor Aretas (DCI Mentor) und Gemini
+**Technische Umsetzung und Design:** Josephine Mundt, unterstützt durch Ndimofor Aretas (DCI Mentor) und Gemini
 
 ---
