@@ -1,4 +1,4 @@
-![Ein Bild von der Startseite der Website](./assets/dashboard.png)
+![Ein Bild von der Startseite der Website](./assets/dashboard.webp)
 
 🛡️ Rinaboth – Das Versiegeln der Tore
 Willkommen im offiziellen Web-Portal von Rinaboth. Diese Website dient als zentrale Informationsquelle für die Helden, die Geschichte und die Geografie einer Welt, die kurz vor dem Untergang durch die Flammensalamander steht.
