@@ -1,45 +1,67 @@
 ![Ein Bild von der Startseite der Website](./assets/dashboard.webp)
 
-🛡️ Rinaboth – Das Versiegeln der Tore
-Willkommen im offiziellen Web-Portal von Rinaboth. Diese Website dient als zentrale Informationsquelle für die Helden, die Geschichte und die Geografie einer Welt, die kurz vor dem Untergang durch die Flammensalamander steht.
+# 🛡️ Rinaboth – Das Versiegeln der Tore
 
-📖 Hintergrund
-Einst ein Reich der Harmonie zwischen Menschen (Rina) und Zwergen (Both), stürzte Rinaboth nach dem Ende der königlichen Blutlinie in ein Zeitalter der Kriege. Heute wird das Land von sieben Lords regiert, während eine uralte Bedrohung aus den flammenden Hügeln erwacht.
+Dieses Dokument beschreibt das offizielle Web-Portal des Projekts "Rinaboth". Die Anwendung fungiert als zentrale Informationsarchitektur zur Darstellung der Protagonisten, der Historie sowie der Geografie einer fiktiven Welt.
 
-"50 Klingen und drei Helden gegen die Flut der Flammensalamander. Das Portal muss fallen, bevor Rinaboth zu Asche wird."
+## 🎯 Projektkontext und Zielsetzung
 
-🚀 Features
-Die Website bietet eine Übersicht über:
+Das Projekt wurde im Rahmen einer Qualifizierungsmaßnahme zur Frontend-Webentwicklerin am Digital Career Institute (DCI) realisiert. Der entwicklungstechnische Fokus liegt auf der Implementierung responsiver Designkonzepte (Mobile-First-Ansatz) sowie der Einhaltung von Richtlinien zur digitalen Barrierefreiheit (Accessibility/A11y).
 
-Die Helden: Profile von Avra, Lahar und Acnologika (verknüpft mit D&D Beyond).
+## ⚙️ Technische Spezifikationen und Merkmale
 
-Die Welt: Eine interaktive Darstellung der sieben Städte und ihrer Herrscher sowie Kartenmaterial.
+**Struktursprache:** Valides, semantisches HTML5 zur Gewährleistung einer maschinenlesbaren Dokumentenstruktur.
 
-Die Geschichte: Eine chronologische Timeline von der königlichen Ära bis zum heutigen Tag.
+**Design & Layout:** Tailwind CSS (v4.x) und DaisyUI für die Umsetzung adaptiver, moderner Benutzeroberflächen.
 
-Responsive Design: Optimiert für Desktop und mobile Endgeräte (Tablets am Spieltisch).
+**Barrierefreiheit (A11y):** Strategische Integration von aria-Attributen sowie touch-optimierte Interaktionsflächen für mobile Endgeräte.
 
-🛠️ Technische Details
-Dieses Projekt wurde mit Fokus auf Schnelligkeit und moderne Ästhetik entwickelt:
+**Build-Management:** Vite als Build-Tool und lokaler Entwicklungsserver.
 
-HTML5: Strukturierte Inhalte mit semantischen Tags.
+**🚀 Zukünftige Entwicklungsphasen**
 
-Tailwind CSS: Für das Styling und Layout (Utility-First-Ansatz).
+Zur Transformation der statischen Informationsseite in eine interaktive Web-Applikation sind folgende funktionale Erweiterungen geplant:
 
-DaisyUI: Integration von UI-Komponenten wie Timelines, Karten (Cards) und Hero-Sektionen.
+[ ] **JavaScript-Integration:** Extraktion von Datenstrukturen in JSON-Formate zur dynamischen Inhaltsgenerierung (DRY-Prinzip).
 
-Interaktive Elemente: Smooth-Scrolling für eine angenehme Navigation zwischen den Sektionen.
+[ ] **Erweiterte Barrierefreiheit:** Implementierung visueller Fokus-Indikatoren zur Gewährleistung einer normgerechten Tastaturnavigation.
 
-📂 Struktur
-index.html: Hauptseite mit allen Sektionen (Helden, Welt, Geschichte).
+[ ] **Interaktivität:** Integration von Filter- und Sortieralgorithmen zur Manipulation der Inhaltsdarstellung.
 
-/assets: Enthält Bildmaterial wie Karten und Icons.
+[ ] **Kontrast-Audit:** Überprüfung und Optimierung der Farbkontraste in Übereinstimmung mit den Vorgaben der Web Content Accessibility Guidelines (WCAG).
 
-/src/style.css: Beinhaltet die Tailwind-Konfiguration und benutzerdefinierte Stile.
+## 💻 Installationsanleitung
 
-👤 Mitwirkende
-Spielleitung: SL Voltikun
+Für die lokale Ausführung wird eine funktionale Node.js-Umgebung vorausgesetzt.
 
-Entwicklung & Design: Josephine Mundt, Hilfe von Ndimofor Aretas und Gemini
+**1. Repository klonen**
 
-Inhaltliche Quellen: World Anvil - Rinaboth
+```
+git clone [https://github.com/josephinemundt1297/d-and-d-project.git](https://github.com/josephinemundt1297/d-and-d-project.git)
+```
+
+**2. In das Verzeichnis wechseln**
+
+```
+cd d-and-d-project
+```
+
+**3. Abhängigkeiten installieren**
+
+```
+npm install
+```
+
+**4. Entwicklungsserver starten**
+
+```
+npm run dev
+```
+
+**👥 Projektbeteiligte**
+
+Inhaltliche Konzeption (Spielleitung): SL Voltikun (via World Anvil)
+
+Technische Umsetzung und Design: Josephine Mundt, unterstützt durch Ndimofor Aretas (DCI Mentor) und Gemini
+
+---
