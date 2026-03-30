@@ -7,41 +7,63 @@
     <title>Willkommen in Rinaboth</title>
   </head>
   <body>
-    <!-- Navbar -->
+    <!-- Skip-to-Content Link für Tastaturnutzer -->
+    <a
+      href="#main-content"
+      class="absolute -top-full left-0 z-50 focus:top-0 p-4 bg-primary text-primary-content rounded-br-lg"
+    >
+      Zum Hauptinhalt springen
+    </a>
+
+    <!-- Navbar als semantisches Header/Nav Element -->
     <header class="bg-base-200/90 backdrop-blur-sm sticky top-0 z-50 shadow-md">
-      <!-- Container für die Navbar-Inhalte -->
-      <div class="navbar container mx-auto gap-3 justify-between">
+      <nav
+        aria-label="Hauptnavigation"
+        class="navbar container mx-auto gap-3 justify-between"
+      >
         <!-- Logo -->
         <div class="navbar-start flex-1">
-          <a href="#"
-            ><img
+          <a
+            href="#"
+            aria-label="Zurück zur Startseite"
+            class="focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded-full inline-block"
+          >
+            <!-- alt="" weil der a-Tag bereits ein aria-label hat (Vermeidung von Doppelvorlesung) -->
+            <img
               src="./assets/d20.ico"
-              alt="Ein Icon eines D20 Würfels"
+              alt=""
+              aria-hidden="true"
               class="hexagon h-12 w-12 md:h-16 md:w-16 shadow-md"
             />
           </a>
         </div>
-        <!-- Navigation Links -->
+        <!-- Navigation Link Mitte -->
         <div
           class="navbar-center justify-start md:justify-center flex-1 text-3xl p-1 underline"
         >
           <a
             href="#home"
-            rel="noopener noreferrer"
-            class="inline-block -m-5 underline"
-            alt="Link zu der Startseite"
-            >Rinaboth</a
+            class="inline-block -m-5 underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded-md"
           >
+            Rinaboth
+          </a>
         </div>
         <!-- Dropdown für mobile Ansicht -->
         <div class="dropdown">
-          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          <div
+            tabindex="0"
+            role="button"
+            aria-label="Menü öffnen"
+            aria-haspopup="menu"
+            class="btn btn-ghost lg:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-8 w-8"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
               <path
                 stroke-linecap="round"
@@ -53,34 +75,35 @@
           </div>
           <ul
             tabindex="-1"
+            role="menu"
             class="menu menu-lg dropdown-content bg-base-200 rounded-box gap-3 z-10 mt-3 w-52 p-2 shadow"
           >
-            <li>
+            <li role="none">
               <a
                 href="#heroes"
-                rel="noopener noreferrer"
-                class="inline-block p-1 underline"
-                alt="Link zu den Helden"
-                >Helden</a
+                role="menuitem"
+                class="inline-block p-1 underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
               >
+                Helden
+              </a>
             </li>
-            <li>
+            <li role="none">
               <a
                 href="#world"
-                rel="noopener noreferrer"
-                class="inline-block p-1 underline"
-                alt="Link zu der Welt"
-                >Die Welt</a
+                role="menuitem"
+                class="inline-block p-1 underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
               >
+                Die Welt
+              </a>
             </li>
-            <li>
+            <li role="none">
               <a
                 href="#history"
-                rel="noopener noreferrer"
-                class="inline-block p-1 underline"
-                alt="Link zu der Geschichte"
-                >Die Geschichte</a
+                role="menuitem"
+                class="inline-block p-1 underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
               >
+                Die Geschichte
+              </a>
             </li>
           </ul>
         </div>
@@ -90,40 +113,39 @@
             <li>
               <a
                 href="#heroes"
-                rel="noopener noreferrer"
-                class="inline-block p-1 underline"
-                alt="Link zu den Helden"
-                >Helden</a
+                class="inline-block p-1 underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded-md"
               >
+                Helden
+              </a>
             </li>
             <li>
               <a
                 href="#world"
-                rel="noopener noreferrer"
-                class="inline-block p-1 underline"
-                alt="Link zu der Welt"
-                >Die Welt</a
+                class="inline-block p-1 underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded-md"
               >
+                Die Welt
+              </a>
             </li>
             <li>
               <a
                 href="#history"
-                rel="noopener noreferrer"
-                class="inline-block p-1 underline"
-                alt="Link zu der Geschichte"
-                >Die Geschichte</a
+                class="inline-block p-1 underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded-md"
               >
+                Die Geschichte
+              </a>
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
     </header>
-    <main>
+
+    <main id="main-content">
       <!-- 1. Hero Section / Landing Page -->
-      <div
+      <section
         id="home"
+        aria-label="Startbereich"
         class="hero min-h-screen"
-        style="background-image: url(&quot;./assets/background.webp&quot;)"
+        style="background-image: url(./assets/background.webp)"
       >
         <div class="hero-overlay"></div>
         <div class="hero-content text-center">
@@ -144,98 +166,102 @@
             </p>
           </div>
         </div>
-      </div>
+      </section>
+
       <!-- 2. Section: Heroes -->
       <section
         id="heroes"
+        aria-labelledby="heroes-heading"
         class="min-h-screen py-16 bg-base-200 flex justify-center items-center"
       >
         <div class="container mx-auto px-4 md:px-50">
           <h2
+            id="heroes-heading"
             class="text-4xl md:text-5xl font-bold text-center mb-6 text-secondary tracking-tighter"
           >
             Die Helden von Rinaboth
           </h2>
-          <div class="divider w-55 mb-16 divider-primary mx-auto"></div>
-          <!--Card-->
+          <div
+            class="divider w-55 mb-16 divider-primary mx-auto"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Cards -->
           <div class="w-full flex flex-col lg:flex-row gap-10">
-            <!--Avra-->
-            <div
-              class="gap-4 p-6 bg-base-100 rounded-3xl shadow-xl border border-primary/10"
+            <!-- Avra -->
+            <article
+              class="gap-4 p-6 bg-base-100 rounded-3xl shadow-xl border border-primary/10 flex flex-col"
             >
               <figure class="flex items-center justify-center">
                 <img
                   src="./assets/avra.webp"
-                  alt="Avra"
+                  alt="Portrait von der Satir-Badin Avra"
                   class="rounded-xl h-40 w-40 md:h-52 md:w-52 shadow-md"
                 />
               </figure>
-              <div class="text-center self-start">
+              <div class="text-center self-start flex-1">
                 <h3 class="text-3xl font-serif text-secondary mb-2">Avra</h3>
                 <p class="text-md opacity-80 leading-relaxed">
                   Ich bin Avra, eine Hüterin des Dark Willow Woods und Bardin
                   der schwebenden Pfade...
                 </p>
               </div>
-
               <div class="pt-4 mt-auto">
                 <a
                   href="https://www.dndbeyond.com/characters/46519789"
-                  alt="Link zu dem Charakterbogen um mehr zu erfahren"
+                  aria-label="Erfahre mehr über den Charakter Avra auf D&D Beyond"
                   rel="noopener noreferrer"
                   target="_blank"
-                  class="btn btn-warning btn-block btn-sm"
+                  class="btn btn-warning btn-block btn-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning"
                 >
                   Erfahre mehr
                 </a>
               </div>
-            </div>
+            </article>
 
-            <!--Lahar-->
-            <div
-              class="gap-4 p-6 bg-base-100 rounded-3xl shadow-xl border border-primary/10"
+            <!-- Lahar -->
+            <article
+              class="gap-4 p-6 bg-base-100 rounded-3xl shadow-xl border border-primary/10 flex flex-col"
             >
               <figure class="flex items-center justify-center">
                 <img
                   src="./assets/lahar.webp"
-                  alt="Lahar"
+                  alt="Portrait von dem Dieb Lahar mit feuerrotem Haar"
                   class="rounded-xl object-cover h-40 w-40 md:h-52 md:w-52 shadow-md"
                 />
               </figure>
-
-              <div class="text-center self-start">
+              <div class="text-center self-start flex-1">
                 <h3 class="text-3xl font-serif text-secondary mb-2">Lahar</h3>
                 <p class="text-md opacity-80 leading-relaxed">
                   Ich bin Lahar, ein Dieb aus den Schatten der Stadt, der sich
                   den flammenden Hügeln anschließt...
                 </p>
               </div>
-
               <div class="pt-4 mt-auto">
                 <a
                   href="https://www.dndbeyond.com/characters/59411193/s5ESAj"
-                  alt="Link zu dem Charakterbogen von Lahar um mehr zu erfahren"
+                  aria-label="Erfahre mehr über den Charakter Lahar auf D&D Beyond"
                   rel="noopener noreferrer"
                   target="_blank"
-                  class="btn btn-warning btn-block btn-sm"
+                  class="btn btn-warning btn-block btn-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning"
                 >
                   Erfahre mehr
                 </a>
               </div>
-            </div>
+            </article>
 
-            <!--Acnologika-->
-            <div
-              class="gap-4 p-6 bg-base-100 rounded-3xl shadow-xl border border-primary/10"
+            <!-- Acnologika -->
+            <article
+              class="gap-4 p-6 bg-base-100 rounded-3xl shadow-xl border border-primary/10 flex flex-col"
             >
               <figure class="flex items-center justify-center">
                 <img
                   src="./assets/acnologika.webp"
-                  alt="Acnologika"
+                  alt="Portrait von Acnologika einem Drachengeborenen mit weißen Schuppen"
                   class="rounded-xl object-cover h-40 w-40 md:h-52 md:w-52 shadow-md"
                 />
               </figure>
-              <div class="text-center self-start">
+              <div class="text-center self-start flex-1">
                 <h3 class="text-3xl font-serif text-secondary mb-2">
                   Acnologika
                 </h3>
@@ -244,64 +270,81 @@
                   anschließt, um Rinaboth zu retten...
                 </p>
               </div>
-
               <div class="pt-4 mt-auto">
                 <a
                   href="https://www.dndbeyond.com/characters/60583566/yJmuaL"
-                  alt="Link zu dem Charakterbogen um mehr zu erfahren"
+                  aria-label="Erfahre mehr über den Charakter Acnologika auf D&D Beyond"
                   rel="noopener noreferrer"
                   target="_blank"
-                  class="btn btn-warning btn-block btn-sm"
+                  class="btn btn-warning btn-block btn-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-warning"
                 >
                   Erfahre mehr
                 </a>
               </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
+
       <!-- 3. Section: World -->
-      <section id="world" class="py-16">
+      <section id="world" aria-labelledby="world-heading" class="py-16">
         <div class="container mx-auto px-4 md:px-10">
           <h2
+            id="world-heading"
             class="text-4xl md:text-5xl mt-2.5 font-bold text-center text-secondary tracking-tighter"
           >
             Die Welt von Rinaboth
           </h2>
-          <div class="divider w-55 mb-16 divider-primary mx-auto"></div>
+          <div
+            class="divider w-55 mb-16 divider-primary mx-auto"
+            aria-hidden="true"
+          ></div>
           <figure class="flex items-center justify-center mb-10">
             <img
               src="./assets/rinaboth.webp"
-              alt="Eine Karte von Rinaboth"
+              alt="Geografische Karte der Welt Rinaboth"
               class="rounded-3xl shadow-lg w-full md:w-3/4"
             />
           </figure>
-          <p class="text-lg text-center max-w-3xl mx-auto mb-35">
-            Einst war Rinaboth ein Reich der Harmonie, dessen Name die Einheit
-            von Mensch (Rina – Fluss) und Zwerg (Both – Stein) besiegelte. Doch
-            vor 250 Jahren versiegte die königliche Blutlinie in einer Tragödie,
-            die das Land in achtzig Jahre blutiger Erbfolgekriege stürzte. Die
-            Ära der Sieben Lords Seit 120 Jahren herrscht ein brüchiger Frieden.
-            Sieben Lords teilen das Land unter sich auf. Während an der
-            Oberfläche Turniere und "Gentleman-Duelle" das Volk unterhalten,
-            tobt im Schatten ein unerbittlicher Kampf um Steuern, Macht und
-            Territorium. Das Schicksal der einfachen Leute Für die Bewohner von
-            Rinaboth sind politische Wechsel Alltag geworden. Man wettet auf den
-            nächsten Lord, während man die Last der Steuern trägt. Doch nun
-            droht eine Gefahr, die kein politisches Ränkespiel lösen kann: Die
-            flammenden Hügel beben, und die "Flüsse aus Stein" fordern ihren
-            Tribut.
-          </p>
-          <div class="flex flex-col justify-content align-items">
+          <div class="text-lg max-w-3xl mx-auto mb-16 space-y-4">
+            <p>
+              Einst war Rinaboth ein Reich der Harmonie, dessen Name die Einheit
+              von Mensch (Rina – Fluss) und Zwerg (Both – Stein) besiegelte.
+              Doch vor 250 Jahren versiegte die königliche Blutlinie in einer
+              Tragödie, die das Land in achtzig Jahre blutiger Erbfolgekriege
+              stürzte.
+            </p>
+            <p>
+              <strong>Die Ära der Sieben Lords:</strong> Seit 120 Jahren
+              herrscht ein brüchiger Frieden. Sieben Lords teilen das Land unter
+              sich auf. Während an der Oberfläche Turniere und
+              "Gentleman-Duelle" das Volk unterhalten, tobt im Schatten ein
+              unerbittlicher Kampf um Steuern, Macht und Territorium.
+            </p>
+            <p>
+              <strong>Das Schicksal der einfachen Leute:</strong> Für die
+              Bewohner von Rinaboth sind politische Wechsel Alltag geworden. Man
+              wettet auf den nächsten Lord, während man die Last der Steuern
+              trägt. Doch nun droht eine Gefahr, die kein politisches Ränkespiel
+              lösen kann: Die flammenden Hügel beben, und die "Flüsse aus Stein"
+              fordern ihren Tribut.
+            </p>
+          </div>
+          <div class="flex flex-col">
             <div class="text-center mb-3">
               <h3
                 class="text-3xl text-center text-secondary font-semibold tracking-wide"
               >
                 Die sieben Städte und deren Lords
               </h3>
-              <div class="divider w-55 divider-primary mt-2 mx-auto"></div>
+              <div
+                class="divider w-55 divider-primary mt-2 mx-auto"
+                aria-hidden="true"
+              ></div>
             </div>
-            <ul class="list-none md:ml-20 md:pl-17 mb-10 text-lg">
+            <ul
+              class="list-disc list-inside md:w-max md:mx-auto mb-10 text-lg space-y-2"
+            >
               <li>
                 <strong>West Farthing</strong> – Lord Earnest Hellingway – „Das
                 goldene Herz des Westmeeres“
@@ -323,62 +366,96 @@
             </ul>
             <a
               href="https://www.worldanvil.com/w/tiangra-voltikun/a/rinaboth-location"
-              alt="Link um mehr über Rinaboth zu erfahren"
+              aria-label="Erfahre mehr über die Welt von Rinaboth auf World Anvil"
               rel="noopener noreferrer"
               target="_blank"
-              class="btn bg-amber-400 dark:btn-warning dark:text-amber-950 btn-soft btn-lg self-center"
+              class="btn bg-amber-400 dark:btn-warning dark:text-amber-950 btn-soft btn-lg self-center focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-600"
             >
               Erfahre mehr
             </a>
           </div>
         </div>
       </section>
-      <section id="history" class="py-16 bg-base-200">
+
+      <!-- 4. Section: History -->
+      <section
+        id="history"
+        aria-labelledby="history-heading"
+        class="py-16 bg-base-200"
+      >
         <div class="container mx-auto px-4 md:px-10">
           <h2
+            id="history-heading"
             class="text-4xl md:text-5xl mt-2.5 font-bold text-center text-secondary tracking-tighter"
           >
             Die Geschichte von Rinaboth
           </h2>
-          <div class="divider w-55 mb-16 divider-primary mx-auto"></div>
-          <p
-            class="text-base md:text-lg text-center max-w-3xl mx-auto mr-5 md:mr-90 mb-8 md:mb-20"
-          >
-            Vor 250 Jahren: Das Ende der königlichen Blutlinie – Ein tragischer
-            Unfall führt zum Tod des letzten Königs und seiner Erbin, was die
-            Dynastie auslöscht und das Land in Chaos stürzt. 250–170 Jahre
-            zuvor: Die Erbfolgekriege – Ohne legitimen Thronfolger kämpfen
-            rivalisierende Adelsfamilien um die Macht, was zu achtzig Jahren
-            blutiger Konflikte führt. 170–120 Jahre zuvor: Die Ära der Sieben
-            Lords – Sieben mächtige Lords teilen Rinaboth unter sich auf,
-            etablieren ein fragiles Gleichgewicht und führen das Land in eine
-            Zeit relativen Friedens. 120 Jahre zuvor: Aufstieg der
-            Flammensalamander – Die flammenden Hügel erwachen zum Leben, und die
-            "Flüsse aus Stein" beginnen, Opfer zu fordern, was die Bevölkerung
-            in Angst und Schrecken versetzt. Gegenwart: Das Versiegeln der Tore
-            – Drei Helden sammeln sich in den Hallen von Draken, um die Tore zu
-            den flammenden Hügeln zu versiegeln und Rinaboth vor der drohenden
-            Zerstörung zu retten.
-          </p>
-          <div class="flex flex-col justify-content align-items">
-            <div class="text-center mb-3">
+          <div
+            class="divider w-55 mb-16 divider-primary mx-auto"
+            aria-hidden="true"
+          ></div>
+
+          <div class="text-base md:text-lg max-w-3xl mx-auto mb-16 space-y-4">
+            <p>
+              <strong
+                >Vor 250 Jahren: Das Ende der königlichen Blutlinie</strong
+              >
+              – Ein tragischer Unfall führt zum Tod des letzten Königs und
+              seiner Erbin, was die Dynastie auslöscht und das Land in Chaos
+              stürzt.
+            </p>
+            <p>
+              <strong>250–170 Jahre zuvor: Die Erbfolgekriege</strong> – Ohne
+              legitimen Thronfolger kämpfen rivalisierende Adelsfamilien um die
+              Macht, was zu achtzig Jahren blutiger Konflikte führt.
+            </p>
+            <p>
+              <strong>170–120 Jahre zuvor: Die Ära der Sieben Lords</strong> –
+              Sieben mächtige Lords teilen Rinaboth unter sich auf, etablieren
+              ein fragiles Gleichgewicht und führen das Land in eine Zeit
+              relativen Friedens.
+            </p>
+            <p>
+              <strong>120 Jahre zuvor: Aufstieg der Flammensalamander</strong> –
+              Die flammenden Hügel erwachen zum Leben, und die "Flüsse aus
+              Stein" beginnen, Opfer zu fordern, was die Bevölkerung in Angst
+              und Schrecken versetzt.
+            </p>
+            <p>
+              <strong>Gegenwart: Das Versiegeln der Tore</strong> – Drei Helden
+              sammeln sich in den Hallen von Draken, um die Tore zu den
+              flammenden Hügeln zu versiegeln und Rinaboth vor der drohenden
+              Zerstörung zu retten.
+            </p>
+          </div>
+
+          <div class="flex flex-col">
+            <div class="text-center mb-8">
               <h3
                 class="text-3xl text-center text-secondary font-semibold tracking-wide"
               >
                 Die wichtigsten Ereignisse in Rinaboths Geschichte
               </h3>
-              <div class="divider w-55 divider-primary mt-2 mx-auto"></div>
+              <div
+                class="divider w-55 divider-primary mt-2 mx-auto"
+                aria-hidden="true"
+              ></div>
             </div>
-            <ul class="timeline timeline-vertical">
+
+            <ul
+              class="timeline timeline-vertical mb-16"
+              aria-label="Historische Zeitleiste"
+            >
               <li>
                 <div class="timeline-start timeline-box text-lg md:text-xl">
                   Das Ende der königlichen Blutlinie
                 </div>
-                <div class="timeline-middle">
+                <div class="timeline-middle" aria-hidden="true">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
+                    focusable="false"
                     class="text-primary h-10 w-10"
                   >
                     <path
@@ -388,15 +465,16 @@
                     />
                   </svg>
                 </div>
-                <hr class="bg-primary" />
+                <hr class="bg-primary" aria-hidden="true" />
               </li>
               <li>
-                <hr class="bg-primary" />
-                <div class="timeline-middle">
+                <hr class="bg-primary" aria-hidden="true" />
+                <div class="timeline-middle" aria-hidden="true">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
+                    focusable="false"
                     class="text-primary h-10 w-10"
                   >
                     <path
@@ -409,18 +487,19 @@
                 <div class="timeline-end timeline-box text-lg md:text-xl">
                   Kampf der rivalisierenden Königreiche
                 </div>
-                <hr class="bg-primary" />
+                <hr class="bg-primary" aria-hidden="true" />
               </li>
               <li>
-                <hr class="bg-primary" />
+                <hr class="bg-primary" aria-hidden="true" />
                 <div class="timeline-start timeline-box text-lg md:text-xl">
                   Die Ära der sieben Lords
                 </div>
-                <div class="timeline-middle">
+                <div class="timeline-middle" aria-hidden="true">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
+                    focusable="false"
                     class="text-primary h-10 w-10"
                   >
                     <path
@@ -430,15 +509,16 @@
                     />
                   </svg>
                 </div>
-                <hr />
+                <hr aria-hidden="true" />
               </li>
               <li>
-                <hr />
-                <div class="timeline-middle">
+                <hr aria-hidden="true" />
+                <div class="timeline-middle" aria-hidden="true">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
+                    focusable="false"
                     class="h-10 w-10"
                   >
                     <path
@@ -451,18 +531,19 @@
                 <div class="timeline-end timeline-box text-lg md:text-xl">
                   Aufstieg der Flammensalamander
                 </div>
-                <hr />
+                <hr aria-hidden="true" />
               </li>
               <li>
-                <hr />
+                <hr aria-hidden="true" />
                 <div class="timeline-start timeline-box text-lg md:text-xl">
                   Das Versiegeln des Portals
                 </div>
-                <div class="timeline-middle">
+                <div class="timeline-middle" aria-hidden="true">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
+                    focusable="false"
                     class="h-10 w-10"
                   >
                     <path
@@ -474,18 +555,23 @@
                 </div>
               </li>
             </ul>
-            <figure class="flex items-center justify-center mb-10">
+
+            <figure class="flex items-center justify-center">
               <img
                 src="./assets/location.webp"
-                alt="Eine Karte von dem Standort unserer Helden in Draken"
+                alt="Karte mit dem Standort unserer Helden in Draken"
                 class="rounded-3xl shadow-lg w-full md:w-3/4"
               />
+              <figcaption class="sr-only">
+                Karte, die zeigt, wo sich die Helden derzeit in Draken befinden.
+              </figcaption>
             </figure>
           </div>
         </div>
       </section>
     </main>
-    <footer>
+
+    <footer class="bg-base-300">
       <div class="container mx-auto px-4 py-8 text-center text-sm opacity-70">
         &copy; SL Voltikun / Erstellt von Josephine Mundt
       </div>
