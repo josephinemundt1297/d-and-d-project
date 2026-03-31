@@ -1,4 +1,4 @@
-![An image of the website homepage](./public/assets/background.webp)
+![An image of the website homepage](./public/assets/dashboard.webp)
 
 # Rinaboth - Sealing the Gates
 
