@@ -1,9 +1,51 @@
-const CACHE_NAME = "Rinaboth"; // durch deinen App-Namen und deine Version ersetzen
-const ASSETS_TO_CACHE = ["/", "/index.html", "/src/style.css"];
+const CACHE_NAME = "Rinaboth";
+const APP_SHELL = ["/", "/index.html"];
+
+const isCacheableResponse = (response) =>
+  response && response.ok && response.type === "basic";
+
+const networkFirst = async (request, fallbackUrl) => {
+  try {
+    const response = await fetch(request);
+    if (isCacheableResponse(response)) {
+      const cache = await caches.open(CACHE_NAME);
+      await cache.put(request, response.clone());
+    }
+    return response;
+  } catch {
+    const cached = await caches.match(request);
+    if (cached) return cached;
+    if (fallbackUrl) return caches.match(fallbackUrl);
+    throw new Error("Request failed and no fallback was found");
+  }
+};
+
+const staleWhileRevalidate = async (request) => {
+  const cached = await caches.match(request);
+
+  const networkPromise = fetch(request)
+    .then(async (response) => {
+      if (isCacheableResponse(response)) {
+        const cache = await caches.open(CACHE_NAME);
+        await cache.put(request, response.clone());
+      }
+      return response;
+    })
+    .catch(() => null);
+
+  if (cached) {
+    return cached;
+  }
+
+  const networkResponse = await networkPromise;
+  if (networkResponse) return networkResponse;
+
+  throw new Error("Asset unavailable in cache and network");
+};
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS_TO_CACHE)),
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)),
   );
   self.skipWaiting();
 });
@@ -21,21 +63,33 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-self.addEventListener("fetch", (event) => {
-  if (event.request.method !== "GET") return;
+self.addEventListener("message", (event) => {
+  if (event.data === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
+});
 
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request)
-        .then((response) => {
-          const copy = response.clone();
-          caches
-            .open(CACHE_NAME)
-            .then((cache) => cache.put(event.request, copy));
-          return response;
-        })
-        .catch(() => caches.match("/index.html"));
-    }),
-  );
+self.addEventListener("fetch", (event) => {
+  const { request } = event;
+  if (request.method !== "GET") return;
+
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+
+  if (request.mode === "navigate") {
+    event.respondWith(networkFirst(request, "/index.html"));
+    return;
+  }
+
+  if (request.destination === "style" || request.destination === "script") {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  if (request.destination === "image" || request.destination === "font") {
+    event.respondWith(staleWhileRevalidate(request));
+    return;
+  }
+
+  event.respondWith(networkFirst(request));
 });
