@@ -2,19 +2,20 @@
 
 ## Aktueller technischer Stand
 
-Der Branch `refactor/react-typescript` enthält eine statische Vite-Anwendung.
-Der gesamte sichtbare Seiteninhalt liegt in `index.html`. Es gibt noch keinen
-JavaScript- oder TypeScript-Einstiegspunkt für eine React-Anwendung.
+Der Branch `refactor/react-typescript` enthält eine React-Anwendung mit
+TypeScript und Vite. `index.html` stellt Metadaten und das Wurzelelement
+`#root` bereit. `src/main.tsx` startet React; der bisherige sichtbare
+Seiteninhalt liegt zunächst vollständig in `src/App.tsx`.
 
 | Bereich      | Aktueller Stand                                          |
 | ------------ | -------------------------------------------------------- |
 | Build-System | Vite 7                                                   |
-| Markup       | Statisches semantisches HTML in `index.html`             |
+| Markup       | Semantisches JSX in `src/App.tsx`                        |
 | Styling      | Tailwind CSS 4 und DaisyUI 5                             |
 | Themes       | `garden` als Standard, `abyss` bei bevorzugtem Dark Mode |
-| JavaScript   | Service-Worker-Registrierung und Offline-Cache           |
-| React        | Noch nicht eingerichtet                                  |
-| TypeScript   | Noch nicht eingerichtet                                  |
+| JavaScript   | Service-Worker-Dateien und Offline-Cache vorhanden       |
+| React        | React-Einstieg mit `main.tsx` und `App.tsx`              |
+| TypeScript   | Strikte Prüfung über `tsconfig.json` und `typecheck`      |
 | Routing      | Sprungmarken innerhalb einer Seite                       |
 | Backend      | Noch nicht eingerichtet                                  |
 | Tests        | Noch nicht eingerichtet                                  |
@@ -33,6 +34,7 @@ JavaScript- oder TypeScript-Einstiegspunkt für eine React-Anwendung.
 │   ├── rollenUndRechte.md
 │   └── teststrategie.md
 ├── index.html
+├── package-lock.json
 ├── package.json
 ├── public/
 │   ├── assets/
@@ -40,15 +42,19 @@ JavaScript- oder TypeScript-Einstiegspunkt für eine React-Anwendung.
 │   ├── service-worker.js
 │   └── site.webmanifest
 ├── src/
+│   ├── App.tsx
+│   ├── main.tsx
 │   ├── register-sw.js
 │   └── style.css
+├── tsconfig.json
 └── vite.config.js
 ```
 
-`index.html` enthält Navigation, Startbereich, Helden, Welt, Geschichte und
-Footer. `src/style.css` bindet Tailwind und DaisyUI ein. Der Service Worker
-verwendet für Navigation, Skripte und Styles eine Network-first-Strategie und
-für Bilder und Schriftarten Stale-while-revalidate.
+`src/App.tsx` enthält Navigation, Startbereich, Helden, Welt, Geschichte und
+Footer. `src/style.css` bindet Tailwind und DaisyUI ein. Die vorhandene
+Service-Worker-Datei verwendet für Navigation, Skripte und Styles eine
+Network-first-Strategie und für Bilder und Schriftarten
+Stale-while-revalidate.
 
 ## Inhaltsinventar
 
@@ -64,7 +70,7 @@ für Bilder und Schriftarten Stale-while-revalidate.
 | Metadaten      | Deutsche SEO-, Open-Graph- und Twitter-Beschreibungen            |
 
 Die vorhandenen Abschnitts-IDs `home`, `heroes`, `world` und `history` sowie
-`main-content` und die Überschriften-IDs werden bei der Migration beibehalten.
+`main-content` und die Überschriften-IDs wurden bei der Migration beibehalten.
 
 ## Asset-Inventar
 
@@ -94,8 +100,8 @@ werden, ob feine Kartenbeschriftungen erhalten bleiben.
 
 - Die Manifest-Einträge verweisen auf Icons in der Web-Wurzel, während die
   Dateien unter `public/icons` liegen.
-- Einige Icon-Pfade in `index.html` enthalten noch `public`, obwohl Vite den
-  Inhalt dieses Ordners direkt aus der Web-Wurzel ausliefert.
+- Die Pfade in `index.html` wurden an Vites öffentliche Web-Wurzel angepasst;
+  die abweichenden Icon-Pfade im Manifest müssen separat geprüft werden.
 - Der Service Worker kann während der Entwicklung veraltete Dateien anzeigen;
   `register-sw.js` entfernt deshalb Registrierungen und Caches außerhalb der
   Produktion.

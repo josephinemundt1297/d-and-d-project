@@ -28,12 +28,22 @@ Rollen und Sicherheitsanforderungen vorher geprüft und freigegeben wurden.
 
 ## Tage 2 bis 3: React- und TypeScript-Grundlage
 
-1. React, React DOM, TypeScript und benötigte Typdefinitionen begründet
-   installieren.
-2. TypeScript-Konfiguration und React-Einstiegspunkt anlegen.
-3. Bestehende Seite ohne sichtbare Designänderung in React rendern.
-4. TypeScript-Prüfung und Produktions-Build ausführen.
-5. Texte, IDs, Bilder und Links mit dem Ausgangsstand vergleichen.
+- [x] React, React DOM, TypeScript und benötigte Typdefinitionen begründet
+  installieren.
+- [x] TypeScript-Konfiguration und React-Einstiegspunkt anlegen.
+- [x] Bestehende Seite ohne sichtbare Designänderung in React rendern.
+- [x] TypeScript-Prüfung und Produktions-Build ausführen.
+- [x] Texte, IDs, Bilder und Links mit dem Ausgangsstand vergleichen.
+
+### Prüfergebnis für Tage 2 bis 3
+
+- `npm run typecheck` ist erfolgreich.
+- `npm run build` ist erfolgreich.
+- Die sichtbaren Texte wurden unverändert übernommen.
+- Acht IDs, sechs Bilder und sechzehn Links stimmen mit dem Ausgangsstand
+  überein.
+- Der bereits vorher fehlerhafte relative Canonical-Pfad wurde für den
+  erfolgreichen Vite-Build auf die vollständige Produktions-URL korrigiert.
 
 ## Tage 4 bis 5: Komponenten und Inhalte
 
