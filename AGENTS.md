@@ -197,3 +197,7 @@ Der Abschlussbericht enthält:
 - Umgebungsvariablen
 - öffentliche Datenbankstruktur
 - größere neue Abhängigkeiten
+
+## Zusätzliche Informationen
+
+- Commits beim hochladen ins GitHub ausschließlich mit aussagefähigen Anmerkungen
