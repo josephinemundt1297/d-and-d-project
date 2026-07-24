@@ -47,11 +47,19 @@ Rollen und Sicherheitsanforderungen vorher geprüft und freigegeben wurden.
 
 ## Tage 4 bis 5: Komponenten und Inhalte
 
-- `App.tsx` und eine erste Seitenschicht anlegen.
-- Navigation, Inhaltsbereiche und Footer schrittweise trennen.
-- Wiederkehrende Inhaltsdaten typisieren.
-- Nur tatsächlich wiederverwendbare UI nach Atomic Design einordnen.
-- Komponenten mit React Testing Library absichern.
+- [x] Navigation und Landing-Bereich als allgemeine Seitenbausteine
+  extrahieren.
+- [x] Charakterbereich unter `features/characters` einordnen.
+- [x] Wiederkehrende Charakterdaten typisieren und getrennt vom JSX ablegen.
+- [ ] Welt, Geschichte und Footer schrittweise trennen.
+- [ ] Komponenten mit React Testing Library absichern.
+
+### Prüfergebnis des Komponenten-Arbeitspakets
+
+- Navigation und Landing-Markup wurden ohne inhaltliche Änderung verschoben.
+- Drei Charakterdatensätze erzeugen weiterhin genau drei Charakterkarten.
+- IDs, Texte, Bilder, Alternativtexte und externe Links bleiben erhalten.
+- Es wurden keine Backend-, Supabase- oder RLS-Dateien angelegt.
 
 ## Tage 6 bis 7: Routing und Accessibility
 

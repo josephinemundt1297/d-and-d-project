@@ -4,8 +4,8 @@
 
 Der Branch `refactor/react-typescript` enthält eine React-Anwendung mit
 TypeScript und Vite. `index.html` stellt Metadaten und das Wurzelelement
-`#root` bereit. `src/main.tsx` startet React; der bisherige sichtbare
-Seiteninhalt liegt zunächst vollständig in `src/App.tsx`.
+`#root` bereit. `src/main.tsx` startet React; `src/App.tsx` setzt die
+extrahierten Seitenbereiche und die noch nicht aufgeteilten Inhalte zusammen.
 
 | Bereich      | Aktueller Stand                                          |
 | ------------ | -------------------------------------------------------- |
@@ -43,6 +43,14 @@ Seiteninhalt liegt zunächst vollständig in `src/App.tsx`.
 │   └── site.webmanifest
 ├── src/
 │   ├── App.tsx
+│   ├── components/
+│   │   └── organisms/
+│   │       ├── LandingSection.tsx
+│   │       └── Navigation.tsx
+│   ├── features/
+│   │   └── characters/
+│   │       ├── CharacterSection.tsx
+│   │       └── characterData.ts
 │   ├── main.tsx
 │   ├── register-sw.js
 │   └── style.css
@@ -50,11 +58,13 @@ Seiteninhalt liegt zunächst vollständig in `src/App.tsx`.
 └── vite.config.js
 ```
 
-`src/App.tsx` enthält Navigation, Startbereich, Helden, Welt, Geschichte und
-Footer. `src/style.css` bindet Tailwind und DaisyUI ein. Die vorhandene
-Service-Worker-Datei verwendet für Navigation, Skripte und Styles eine
-Network-first-Strategie und für Bilder und Schriftarten
-Stale-while-revalidate.
+Navigation und Startbereich liegen als allgemeine Seitenbausteine unter
+`src/components/organisms`. Der fachliche Charakterbereich und seine
+typisierten Daten liegen unter `src/features/characters`. Welt, Geschichte
+und Footer verbleiben zunächst in `src/App.tsx`. `src/style.css` bindet
+Tailwind und DaisyUI ein. Die vorhandene Service-Worker-Datei verwendet für
+Navigation, Skripte und Styles eine Network-first-Strategie und für Bilder und
+Schriftarten Stale-while-revalidate.
 
 ## Inhaltsinventar
 
